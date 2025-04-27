@@ -34,7 +34,13 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 ```
 
+## kubectl setup
 
+/etc/rancher/k3s/k3s.yaml from the Linux machine and save it to your local workstation in the directory ~/.kube/config
+
+```sh
+kubectl get all
+```
 
 ## Setup https
 
@@ -46,8 +52,15 @@ kubectl edit deployment traefik -n kube-system
 spec -> template -> spec -> container
 
 ```sh
-args:
-  - "--certificatesresolvers.le.acme.email=your-email@example.com"
-  - "--certificatesresolvers.le.acme.storage=/data/acme.json"
-  - "--certificatesresolvers.le.acme.tlschallenge=true"
+      args:
+        - --certificatesresolvers.le.acme.email=huzaifairfan2001@gmail.com
+        - --certificatesresolvers.le.acme.storage=/data/acme.json
+        - --certificatesresolvers.le.acme.tlschallenge=true
+```
+
+
+### install cert manager
+
+```sh
+helm install cert-manager jetstack/cert-manager   --namespace cert-manager   --create-namespace   --version v1.13.1   --set installCRDs=true
 ```
