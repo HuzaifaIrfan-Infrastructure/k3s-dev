@@ -42,6 +42,11 @@ sudo apt-get install -y kubectl
 kubectl get all
 ```
 
+```sh
+kubectl get services -n kube-system
+```
+
+
 ## Setup https
 
 ```sh
@@ -59,10 +64,16 @@ spec -> template -> spec -> container
 ```
 
 
+
 ### install cert manager
 
 ```sh
-helm install cert-manager jetstack/cert-manager   --namespace cert-manager   --create-namespace   --version v1.13.1   --set installCRDs=true
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace cert-manager \
+  --create-namespace \
+  --version v1.17.2 \
+  --set crds.enabled=true
 ```
 
 
@@ -85,4 +96,3 @@ kubectl delete -f nginx-deployment.yaml
 ```sh
 kubectl delete -f nginx-ingressroute.yaml
 ```
-
