@@ -64,3 +64,25 @@ spec -> template -> spec -> container
 ```sh
 helm install cert-manager jetstack/cert-manager   --namespace cert-manager   --create-namespace   --version v1.13.1   --set installCRDs=true
 ```
+
+
+## Nginx Deployment
+
+```sh
+kubectl apply -f nginx-deployment.yaml
+```
+
+```sh
+kubectl apply -f nginx-ingressroute.yaml
+```
+
+## Delete Deployment
+
+```sh
+kubectl delete -f nginx-deployment.yaml 
+```
+
+```sh
+kubectl delete -f nginx-ingressroute.yaml
+```
+
