@@ -96,3 +96,12 @@ kubectl delete -f nginx-deployment.yaml
 ```sh
 kubectl delete -f nginx-ingressroute.yaml
 ```
+
+
+## Kubernetes Management Tool
+
+### Lens
+
+```sh
+https://docs.k8slens.dev/getting-started/install-lens/#install-lens-desktop-from-the-apt-repository
+```
