@@ -6,7 +6,7 @@
 ## k3s install
 
 ```sh
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION="v1.32.3+k3s1" sh -s - server --cluster-init
+curl -sfL https://get.k3s.io | sh -
 ```
 
 ## Helm Install
@@ -17,7 +17,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 
 
-## kubectl Install
+<!-- ## kubectl Install
 
 ```sh
 sudo apt-get update
@@ -32,11 +32,15 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list   # helps tools such as command-not-found to work correctly
 sudo apt-get update
 sudo apt-get install -y kubectl
-```
+``` -->
 
 ## kubectl setup
 
-/etc/rancher/k3s/k3s.yaml from the Linux machine and save it to your local workstation in the directory ~/.kube/config
+```sh
+sudo chmod 777 /etc/rancher/k3s/k3s.yaml
+```
+
+<!-- /etc/rancher/k3s/k3s.yaml from the Linux machine and save it to your local workstation in the directory ~/.kube/config -->
 
 ```sh
 kubectl get all
@@ -67,14 +71,14 @@ spec -> template -> spec -> container
 
 ### install cert manager
 
-```sh
+<!-- ```sh
 helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --create-namespace \
   --version v1.17.2 \
   --set crds.enabled=true
-```
+``` -->
 
 
 ## Nginx Deployment
