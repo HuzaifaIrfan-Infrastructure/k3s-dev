@@ -7,7 +7,7 @@ spec:
     - websecure
   
   routes:
-  - match: Host(`dev.huzaifairfan.com`) || PathPrefix(`/`)
+  - match: Host(`kube.huzaifairfan.com`) || PathPrefix(`/`)
     kind: Rule
     services:
     - name: nginx-service
@@ -16,4 +16,4 @@ spec:
   tls:
     certResolver: le  # Typically 'le' or 'letsencrypt' if using default Traefik config
     domains:
-      - main: dev.huzaifairfan.com
+      - main: kube.huzaifairfan.com

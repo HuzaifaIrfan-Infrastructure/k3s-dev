@@ -84,6 +84,11 @@ helm install \
 ## Nginx Deployment
 
 ```sh
+kubectl create configmap nginx-index --from-file=index.html
+```
+
+
+```sh
 kubectl apply -f nginx-deployment.yaml
 ```
 
