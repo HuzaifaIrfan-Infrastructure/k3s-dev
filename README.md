@@ -9,6 +9,13 @@
 curl -sfL https://get.k3s.io | sh -
 ```
 
+## k3s uninstall
+
+
+```sh
+/usr/local/bin/k3s-uninstall.sh
+```
+
 ## Helm Install
 
 ```sh
