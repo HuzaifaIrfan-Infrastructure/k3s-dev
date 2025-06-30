@@ -36,11 +36,18 @@ sudo apt-get install -y kubectl
 
 ## kubectl setup
 
-```sh
+<!-- ```sh
 sudo chmod 777 /etc/rancher/k3s/k3s.yaml
+``` -->
+
+```sh
+cat /etc/rancher/k3s/k3s.yaml
+```
+from the Linux machine and save it to your local workstation in the directory 
+```sh
+nano ~/.kube/config
 ```
 
-<!-- /etc/rancher/k3s/k3s.yaml from the Linux machine and save it to your local workstation in the directory ~/.kube/config -->
 
 ```sh
 kubectl get all
